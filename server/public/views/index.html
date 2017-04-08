@@ -1,15 +1,27 @@
 <!DOCTYPE html>
-<html>
+<html ng-app="movieApp">
   <head>
     <meta charset="utf-8">
     <title>Weekend Challenge 5</title>
-    <link rel="stylesheet" href="vendors/bootstrap/css/bootstrap.css"/>
-    <link rel="stylesheet" href="styles/style.css"/>
+    <link rel="stylesheet" href="vendors/bootstrap/css/bootstrap.css" />
+    <link rel="stylesheet" href="styles/style.css" />
     <script type="text/javascript" src="vendors/angular/angular.min.js"></script>
     <script type="text/javascript" src="scripts/client.min.js"></script>
   </head>
   <body>
-    <h1>Favorite Movies!</h1>
-
+    <h1>Movie Collection</h1>
+    <div class="searchMovies">
+      <h2>Search for Movies</h2>
+      <input class="movieInput" placeholder="movie name" ng-model="movie.name" required>
+      <button class="submitBtn">Submit</button>
+    </div>
+    <div ng-controller="OneController">
+      <p> <b>Title:</b> {{infoFromApi.response.data.Title}} </p>
+      <p> <b>Year:</b> {{infoFromApi.response.data.Year}} </p>
+      <p> <b>Actors:</b> {{infoFromApi.response.data.Actors}} </p>
+      <p> <b>Director:</b> {{infoFromApi.response.data.Director}} </p>
+      <p> <b>Genre:</b> {{infoFromApi.response.data.Genre}} </p>
+      <p> <b>Plot:</b> {{infoFromApi.response.data.Plot}} </p>
+    </div>
   </body>
 </html>

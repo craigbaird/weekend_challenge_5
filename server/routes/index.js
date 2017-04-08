@@ -2,9 +2,9 @@ var express = require("express");
 var router = express.Router();
 var path = require("path");
 
-router.get("/info", function(req, res){
-  res.send(200);
-});
+// router.get("/info", function(req, res){
+//   res.send("hi");
+// });
 
 // Base Router
 router.get("/", function(req, res){

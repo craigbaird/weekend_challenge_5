@@ -23,7 +23,7 @@ app.use("/", index);
 
 // Listen
 app.listen(app.get("port"), function(){
-  console.log("Listen on port ", app.get("port"), " I do");
+  console.log("Listening on port", app.get("port"), " I am");
 });
 
 module.exports = app;
