@@ -5,34 +5,33 @@ movieApp.controller("OneController", ["$scope", "MovieService", function($scope,
     title: ""
   };
   this.submit = function() {
-    console.log('User clicked submit', this.input);
-    // var title = this.input;
-    // return title;
-  };
-
-
+    console.log("User clicked Submit", this.input);
+    var input = this.input.title;
+    MovieService.getOmdb(input);
+  }; // end this.submit
+     $scope.infoFromApi = MovieService.infoFromApi;
 }]); // end OneController
 
 movieApp.controller("TwoController", ["$scope", "MovieService", function($scope, MovieService){
-  MovieService.getOmdb();
-  $scope.infoFromApi = MovieService.infoFromApi;
+  this.submit = function() {
+    console.log("User clicked Add To Favorites", this.input);
+
+    // add movie to favorites list
+    
+  }; // end this.submit
 
 }]); // end TwoController
 
 movieApp.factory("MovieService", ["$http", function($http){
 
   var infoFromApi = {};
-
   // Public
   return {
-
   // input from controller one
-
-
     infoFromApi : infoFromApi,
-    getOmdb : function(){
-      var movie = "The Sandlot";
-      // var movie = element(by.exactBinding("movie.name"));
+    getOmdb : function(input){
+      // var movie = "Big";
+      var movie = input;
       $http.get("http://www.omdbapi.com/?t=" + movie + "&y=&plot=full&r=json").then(function(response){
         infoFromApi.response = response;
         console.log(response);
