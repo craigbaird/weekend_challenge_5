@@ -16,18 +16,27 @@
         <input type="text" placeholder="search" ng-model="ctrl.input.title">
         <input type="submit" value="Submit">
       </form>
-      <p> <b>Title:</b> {{infoFromApi.response.data.Title}} </p>
-      <p> <b>Year:</b> {{infoFromApi.response.data.Year}} </p>
-      <p> <b>Genre:</b> {{infoFromApi.response.data.Genre}} </p>
-      <p> <b>Director:</b> {{infoFromApi.response.data.Director}} </p>
-      <p> <b>Actors:</b> {{infoFromApi.response.data.Actors}} </p>
-      <p> <b>Plot:</b> {{infoFromApi.response.data.Plot}} </p>
+      <br>
+    <div class="imgContainer">
+      <img ng-if="ctrl.infoFromApi.response.data.Poster != 'N/A'" ng-src="{{ ctrl.infoFromApi.response.data.Poster }}" >
     </div>
+    <div class="infoContainer">
+      <p> <b>Title:</b> {{ctrl.infoFromApi.response.data.Title}} </p>
+      <p> <b>Year:</b> {{ctrl.infoFromApi.response.data.Year}} </p>
+      <p> <b>Genre:</b> {{ctrl.infoFromApi.response.data.Genre}} </p>
+      <p> <b>Director:</b> {{ctrl.infoFromApi.response.data.Director}} </p>
+      <p> <b>Actors:</b> {{ctrl.infoFromApi.response.data.Actors}} </p>
+      <p> <b>Plot:</b> {{ctrl.infoFromApi.response.data.Plot}} </p>
+    </div>
+    </div>
+    <br>
       <h2>Favorites</h2>
+    <div class="twoControllerContainer">
     <div ng-controller="TwoController as ctrl">
-      <form name="addForm" ng-submit="ctrl.submit()">
+      <form name="favoritesForm" ng-submit="ctrl.favoritesClicked()">
       <input type="submit" value="Add to Favorites">
       </form>
+    </div>
     </div>
   </body>
 </html>
