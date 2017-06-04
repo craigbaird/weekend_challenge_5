@@ -1,6 +1,7 @@
 # Weekend Challenge 5
 Weekend assignment, working with OMDB API to build an application that can search movies, and then let a user store their favorites. Unfortunately, OMDB has changed and this project does not currently run.
 
+## Getting Started
 These instructions will get you a copy of the project up and running on your local machine for development and testing purposes.
 1. View project files
 
